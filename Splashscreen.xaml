@@ -1,0 +1,35 @@
+﻿<Window x:Class="EQUIX.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EQUIX"
+        mc:Ignorable="d"
+        Title="EQUIX" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        ResizeMode="NoResize" Height="600" Width="1000" ShowInTaskbar="True"
+        Background="Black">
+	<Grid>
+
+		<Image x:Name="BackgroundImage" Source="Images/spacex2.jpg" Opacity="0.8" Stretch="Fill" />
+		<Border HorizontalAlignment="Center" Height="600" VerticalAlignment="Center" Width="1000">
+			<Border.Background>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#7F000000"/>
+					<GradientStop Color="#00000000" Offset="1"/>
+				</LinearGradientBrush>
+			</Border.Background>
+		</Border>
+
+		<Border Margin="200,110,200,90">
+			<Border.Effect>
+				<BlurEffect Radius="20" KernelType="Gaussian"/>
+			</Border.Effect>
+			<Image x:Name="Image" Source="Images/spacex2.jpg" Opacity="0.8" Stretch="Fill" />
+		</Border>
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+			<TextBlock Text="Equilibrium" FontSize="75" FontWeight="Bold" Foreground="#FFFF9A9A"/>
+			<TextBlock Text="Algorithmic Trading Lab" FontSize="30" FontWeight="Bold" Foreground="#FFFFC8C8" TextAlignment="Center"  Margin="0,5,0,0"/>
+			<ProgressBar x:Name="ProgressBar" Value="0" Height="10" Width="400" IsIndeterminate="True" Opacity="0.6" Margin="0,10,0,0" BorderBrush="#FFE0A7A7" Background="#FFF1C9C9" Foreground="#FFF96E39"/>
+		</StackPanel>
+	</Grid>
+</Window>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="EQUIX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EQUIX"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200" Background="#33000000" WindowStyle="None" WindowStartupLocation="CenterScreen" Name="EQ">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="15*"/>
+		</Grid.RowDefinitions>
+		<Grid Grid.Row="0">
+			<Image Height="Auto" Width="Auto" Source="Images/equilibriumlogo.png" HorizontalAlignment="Left"></Image>
+			<TextBlock Text="Equilibrium" Foreground="White" FontSize="38" FontFamily="Segoe UI Black" Width="300" HorizontalAlignment="Left" Margin="80,0,0,0" VerticalAlignment="Center"/>
+			<Button Width="50" HorizontalAlignment="Right" Content="X" BorderBrush="{x:Null}" Background="Black" Foreground="#FF5F5F5F" FontSize="15" FontFamily="Lucida Sans Typewriter" Click="CloseMainWindow"/>
+		</Grid>
+		<Grid Grid.Row="1">
+			<DockPanel Grid.RowSpan="2">
+				<!-- Navigation Bar -->
+				<StackPanel DockPanel.Dock="Left" Width="200" Background="#7F020202">
+					<Button Content="Home" Click="Navigate_Click" Tag="HomePage" FontSize="22" Background="#FF0C0C0C" Foreground="#FFCCC3C3" BorderBrush="{x:Null}" Margin="0,15,0,15"/>
+					<Button Content="Trading" Click="Navigate_Click" Tag="TradingPage" FontSize="22" Background="#FF0C0C0C" Foreground="#FFCCC3C3" BorderBrush="{x:Null}" Margin="0,0,0,15"/>
+					<Button Content="Account" Click="Navigate_Click" Tag="AccountPage" FontSize="22" Background="#FF0C0C0C" Foreground="#FFCCC3C3" BorderBrush="{x:Null}" Margin="0,0,0,15"/>
+					<Button Content="Backtesting" Click="Navigate_Click" Tag="BacktestingPage" FontSize="22" Background="#FF0C0C0C" Foreground="#FFCCC3C3" BorderBrush="{x:Null}" Margin="0,0,0,15"/>
+					<Button Content="Portfolio" Click="Navigate_Click" Tag="PortfolioPage" FontSize="22" Background="#FF0C0C0C" Foreground="#FFCCC3C3" BorderBrush="{x:Null}" Margin="0,0,0,15"/>
+					<Button Content="Community" Click="Navigate_Click" Tag="CommunityPage" FontSize="22" Background="#FF0C0C0C" Foreground="#FFCCC3C3" BorderBrush="{x:Null}" Margin="0,0,0,15"/>
+					<Button Content="Settings" Click="Navigate_Click" Tag="SettingsPage" FontSize="22" Background="#FF0C0C0C" Foreground="#FFCCC3C3" BorderBrush="{x:Null}"  Margin="0,0,0,15"/>
+					<Button Content="Close App" Click="CloseMainWindow" FontSize="22" Background="#FF0C0C0C" Foreground="#FFCCC3C3" BorderBrush="{x:Null}" Margin="0,0,0,15"/>
+				</StackPanel>
+
+				<!-- Main Content: Frame for Page Navigation -->
+				<Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Foreground="#00000000"/>
+
+			</DockPanel>
+		</Grid>
+		
+	</Grid>
+
+</Window>

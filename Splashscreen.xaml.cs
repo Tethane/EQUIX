@@ -20,7 +20,7 @@ namespace EQUIX
 	/// </summary>
 	public partial class SplashScreen : Window
 	{
-		private readonly string[] _backgroundImages = { "./Images/spacex1.jpg", "./Images/spacex2.jpg" }; // Paths to your images
+		private readonly string[] _backgroundImages = { "./Images/spacex1.jpg", "./Images/spacex2.jpg" };
 		private DispatcherTimer _timer;
 		private int _progressValue = 0;
 
@@ -32,34 +32,18 @@ namespace EQUIX
 
 		private void InitializeSplashScreen()
 		{
-			// Randomly select an image for the background
-			SetRandomBackgroundImage();
-
-			// Initialize and start the progress bar timer
 			_timer = new DispatcherTimer();
-			_timer.Interval = TimeSpan.FromMilliseconds(50); // Adjust speed of progress
+			_timer.Interval = TimeSpan.FromMilliseconds(50); 
 			_timer.Tick += Timer_Tick;
 			_timer.Start();
 		}
 
-		private void SetRandomBackgroundImage()
-		{
-			// Randomly pick one of the background images
-			Random random = new Random();
-			string selectedImage = _backgroundImages[random.Next(_backgroundImages.Length)];
-
-			// Set the background image
-			string imageUri = "pack://application:,,,/EQUIX;component/" + selectedImage;
-			// BackgroundImage.Source = new BitmapImage(new Uri(imageUri));
-
-		}
-
 		private void Timer_Tick(object sender, EventArgs e)
 		{
-			_progressValue += 5; // Increment progress value
-			ProgressBar.Value = _progressValue; // Update the progress bar
+			_progressValue += 5;
+			ProgressBar.Value = _progressValue; 
 
-			if (_progressValue >= 100) // Once progress is complete
+			if (_progressValue >= 100)
 			{
 				_timer.Stop();
 				NavigateToLoginPage();
@@ -68,10 +52,8 @@ namespace EQUIX
 
 		private async void NavigateToLoginPage()
 		{
-			// Optionally, add a small delay for smooth transition
 			await Task.Delay(500);
 
-			// Open the main window page and close the splash screen
 			MainWindow dashboard = new MainWindow();
 			dashboard.Show();
 			this.Close();
